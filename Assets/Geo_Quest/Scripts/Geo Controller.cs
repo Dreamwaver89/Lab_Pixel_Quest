@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GeoController : MonoBehaviour
 {
     string variable = "Hello";
@@ -10,7 +10,7 @@ public class GeoController : MonoBehaviour
      hello bro
      */
     public float Dell;
-
+    public string NEXT;
 
     // Start is called before the first frame update
     void Start() {
@@ -27,7 +27,7 @@ public class GeoController : MonoBehaviour
         // bill.velocity = new Vector2(1, bill.velocity.y);
 
         //yfyfyufgy
-        if (Input.GetKey(KeyCode.D))
+        /*if (Input.GetKey(KeyCode.D))
         {
             bill.velocity = new Vector2(Dell, bill.velocity.y);
         }
@@ -38,10 +38,26 @@ public class GeoController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             bill.velocity = new Vector2(-Dell, bill.velocity.y);
-        }
-    
-    }   
+        }*/
+     bill.velocity = new Vector2 (Dell * Input.GetAxis("Horizontal"), bill.velocity.y);
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.tag)
+        {
+            case "Enemy":
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                break;
+            }
+            case "Finish":
+                {
+                    SceneManager.LoadScene(NEXT);
+                    break;
+                }
+        }
+    }
 } 
     
 
