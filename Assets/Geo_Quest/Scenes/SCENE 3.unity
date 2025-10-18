@@ -8231,11 +8231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2649200033046645830, guid: 6146e7d17ab6fdf45af49a19e5e47e19, type: 3}
       propertyPath: m_Color.g
-      value: 0.40789792
+      value: 0.4562267
       objectReference: {fileID: 0}
     - target: {fileID: 2649200033046645830, guid: 6146e7d17ab6fdf45af49a19e5e47e19, type: 3}
       propertyPath: m_Color.r
-      value: 0.9433962
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4852878282603665586, guid: 6146e7d17ab6fdf45af49a19e5e47e19, type: 3}
       propertyPath: m_Name
