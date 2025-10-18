@@ -3748,7 +3748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dell: 4
-  NEXT: 
+  NEXT: SCENE 3
 --- !u!212 &1839586269
 SpriteRenderer:
   m_ObjectHideFlags: 0
