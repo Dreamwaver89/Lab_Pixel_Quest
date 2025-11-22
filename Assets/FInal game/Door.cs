@@ -1,9 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickToShow : MonoBehaviour
 {
     public GameObject objectToShow; // Assign in Inspector
     private float displayDuration = 2f;
+    float batterylife;
+
+
 
     void OnMouseDown()
     {
