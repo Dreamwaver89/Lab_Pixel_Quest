@@ -67,7 +67,7 @@ public class HW2Enemy : MonoBehaviour
         // If the enemy touches a bound it gets destored 
         else if(collision.gameObject.tag == boundsTag)
         {
-            Destroy(gameObject);
+           
         }
     }
 }
