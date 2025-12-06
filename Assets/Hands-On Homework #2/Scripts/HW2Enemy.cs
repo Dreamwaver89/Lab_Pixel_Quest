@@ -23,7 +23,7 @@ public class HW2Enemy : MonoBehaviour
     private string gameControllerComponent = "GameController";
 
     // Component 
-    private HW2GameController _hw2GameController;
+    private HW2GameController _gameController;
 
     //==================================================================================================================
     // Base Method  
@@ -32,13 +32,13 @@ public class HW2Enemy : MonoBehaviour
     //Checks who is shooting the bullet and set up the bullet settings 
     private void Start()
     {
-        _hw2GameController = GameObject.Find(gameControllerComponent).GetComponent<HW2GameController>();
+        _gameController = GameObject.Find(gameControllerComponent).GetComponent<HW2GameController>();
         StartCoroutine(Death());
     }
 
     public void SetSpeed(Vector3 newSpeed)
     {
-        rigidbody2D.velocity = newSpeed * Random.Range(minSpeed,maxSpeed);
+        rigidbody2D.velocity = newSpeed * Random.Range(minSpeed, maxSpeed);
     }
 
     //==================================================================================================================
@@ -58,14 +58,14 @@ public class HW2Enemy : MonoBehaviour
         if (collision.gameObject.tag == bulletTag)
         {
             //Updates the Score 
-            _hw2GameController.UpdateScore();
+            _gameController.UpdateScore();
             //Destorys the bullet
             Destroy(collision.gameObject);
             //Destorys the enemy 
             Destroy(gameObject);
         }
         // If the enemy touches a bound it gets destored 
-        else if(collision.gameObject.tag == boundsTag)
+        else if (collision.gameObject.tag == boundsTag)
         {
             Destroy(gameObject);
         }
