@@ -8,6 +8,7 @@ public class TimerDisplay : MonoBehaviour
     public float timeRemaining = 10f; // Set duration in seconds
     public TextMeshPro timerText; // Use TMP_Text if using TextMeshPro
     public string sceneToLoad = "NextScene";
+    public Animator anim;
 
     void Update()
     {
@@ -18,8 +19,15 @@ public class TimerDisplay : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(sceneToLoad);
+            anim.Play("jumpscare");
+            StartCoroutine(LoadSceneAfterDelay());
         }
+    }
+
+    private System.Collections.IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
