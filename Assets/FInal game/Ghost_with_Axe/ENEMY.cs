@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ENEMY : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class ENEMY : MonoBehaviour
     private bool ghoston;
     float appertime;
     public float apperduration = 10;
-        void Start()
+    public Animator anim;
+
+    void Start()
     {
         //i want to make him apper then dissaper
     }
@@ -41,6 +44,7 @@ public class ENEMY : MonoBehaviour
         {//you are supposed to die
             elapsedTime = 0;
             ghost.SetActive(false); 
+            StartCoroutine(LoadSceneAfterDelay());  
         }//ENEMY will come out every 10 secounds and will try to kill you in about 2 secounds 
     }
 
@@ -50,5 +54,12 @@ public class ENEMY : MonoBehaviour
         elapsedTime = 0;
         appertime = 0;
         ghost.SetActive(false);
+    }
+
+    private System.Collections.IEnumerator LoadSceneAfterDelay()
+    {
+        anim.Play("jumpscare");
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

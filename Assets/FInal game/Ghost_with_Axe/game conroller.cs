@@ -9,6 +9,8 @@ public class gameconroller : MonoBehaviour
     public GameObject painting;
 
     public GameObject ghost1;
+
+    public AudioSource doorOneSfx; 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class gameconroller : MonoBehaviour
         if (door1.activeSelf && ghost1.activeSelf)
         {
             ghost1.transform.root.GetComponent<ENEMY>().ghostoff();
+            doorOneSfx.Play();
         }
         if (door2.activeSelf && ghost1.activeSelf)
         {

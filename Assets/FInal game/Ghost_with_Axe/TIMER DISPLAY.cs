@@ -19,15 +19,8 @@ public class TimerDisplay : MonoBehaviour
         }
         else
         {
-            anim.Play("jumpscare");
-            StartCoroutine(LoadSceneAfterDelay());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-
-    private System.Collections.IEnumerator LoadSceneAfterDelay()
-    {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
