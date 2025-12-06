@@ -15,7 +15,7 @@ public class HW2PlayerRotation : MonoBehaviour
 
     private void Update()
     {
-        _positionMouse = _camera.ScreenToworldPoint(Input.mousePosition);
+        _positionMouse = _camera.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 pos = _positionMouse - transform.position;
 
